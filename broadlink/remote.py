@@ -60,7 +60,7 @@ class rmpro(rmmini):
         """Return frequency device is tuned to in MHz"""
         resp = self._send(0x1A)
         return struct.unpack('<I', resp[1:5])[0] / 1000.0
-
+      
     def find_rf_packet(self, frequency=None) -> None:
         """Enter radiofrequency learning mode, optionally tuning the device to a specific frequency"""
         payload = b''
